@@ -1,0 +1,29 @@
+﻿@model IEnumerable<ajaxhw.Models.Movie>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @using (Ajax.BeginForm("Search", 
+                    new AjaxOptions
+                    {
+                        UpdateTargetId = "results",
+                        InsertionMode = InsertionMode.Replace,
+                        HttpMethod = "POST"
+                    }))
+    {
+        <input type="text" name="query" />
+        <input type="submit" />
+    }    
+</p>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<div id="results">
+    @Html.Partial("_MovieResult", Model)
+</div>

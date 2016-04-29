@@ -1,0 +1,83 @@
+﻿@model ajaxhw.Models.Movie
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Movie</h4>
+    <hr />
+    <dl class="dl-horizontal" id="display">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Year)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Year)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Director)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Director)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LeadingMaleRole)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeadingMaleRole)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LeadingMaleActorAge)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeadingMaleActorAge)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LeadingFemaleRole)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeadingFemaleRole)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LeadingFemaleActorAge)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeadingFemaleActorAge)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Ajax.ActionLink("Ajax Edit", "Edit", new { id = Model.Id} ,new AjaxOptions {
+    //UpdateTargetId = "display",
+    HttpMethod= "GET",
+
+}, new { @class="btn btn-primary"} )
+
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+
+

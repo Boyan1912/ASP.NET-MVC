@@ -1,0 +1,29 @@
+Major differences & similarities between ASP.NET Forms and ASP.NET MVC:
+
+1. ASP.NET Web Forms uses Page controller pattern approach for rendering layout. In this approach, every page has it’s own controller i.e. code-behind file that processes the request.
+1. ASP.NET MVC uses Front Controller approach. That approach means ,a common controller for all pages, processes the requests.
+
+2. ASP.NET Web Forms: No separation of concerns. Every page (.aspx) has it’s own controller (code behind i.e. aspx.cs), so both are tightly coupled.
+2. ASP.NET MVC: Very clean separation of concerns. View and Controller are neatly separate.
+
+3. ASP.NET Web Forms: Because of this coupled behavior, automated testing is really difficult.
+3. ASP.NET MVC: Testability is key feature in ASP.NET MVC.
+
+4. ASP.NET Web Forms: Statefulness has a lots of problem for web environment in case of excessively large viewstate. Large viewstate means increase in page size.
+4. ASP.NET MVC: As controller and view are not dependent and also no viewstate concept in ASP.NET MVC, so output is very clean.	
+
+5. ASP.NET WebForms model follows a Page Life cycle.
+5. No Page Life cycle like WebForms. Request cycle is simple in ASP.NET MVC model.
+
+6. In ASP.NET Web Forms, minimal knowledge of HTML, JavaScript and CSS is required.
+6. In MVC, detailed knowledge of HTML, JavaScript and CSS is required.
+
+7. ASP.NET Web Forms: Limited control over HTML, JavaScript and CSS. 
+7. ASP.NET MVC: Full control over HTML, JavaScript and CSS.
+
+8. ASP.NET WebForms is RAD(Rapid Application Development) approach.
+8. ASP.NET MVC is a step back. For developers decrease in productivity.
+
+9. ASP.NET Web Forms is good for small scale applications with limited team size.
+9. ASP.NET MVC is better as well as recommended approach for large-scale applications where different teams are working together.
+

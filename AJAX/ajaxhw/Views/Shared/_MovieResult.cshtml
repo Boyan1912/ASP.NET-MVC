@@ -1,0 +1,62 @@
+﻿@using ajaxhw.Models
+@model IEnumerable<Movie>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Year)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Director)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LeadingMaleRole)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LeadingMaleActorAge)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LeadingFemaleRole)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LeadingFemaleActorAge)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Director)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LeadingMaleRole)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LeadingMaleActorAge)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LeadingFemaleRole)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LeadingFemaleActorAge)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>

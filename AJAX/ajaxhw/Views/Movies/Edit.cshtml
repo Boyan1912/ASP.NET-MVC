@@ -1,0 +1,130 @@
+﻿@model ajaxhw.Models.Movie
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Ajax.BeginForm("Edit", new { id = Model.Id}, new AjaxOptions
+{
+    UpdateTargetId = "changed",
+    InsertionMode = InsertionMode.Replace
+}))
+{
+    @Html.AntiForgeryToken()
+
+    <p>Title</p>
+    @Html.TextBoxFor(x => x.Title)
+    @Html.ValidationMessageFor(x => x.Title)
+
+    <p>Director</p>
+    @Html.TextBoxFor(x => x.Director)
+    @Html.ValidationMessageFor(x => x.Director)
+
+    <p>Female actor</p>
+    @Html.TextBoxFor(x => x.LeadingFemaleRole)
+    @Html.ValidationMessageFor(x => x.LeadingFemaleRole)
+
+    <p>Female actor age</p>
+    @Html.TextBoxFor(x => x.LeadingFemaleActorAge)
+    @Html.ValidationMessageFor(x => x.LeadingFemaleActorAge)
+
+    <p>Male actor</p>
+    @Html.TextBoxFor(x => x.LeadingMaleRole)
+    @Html.ValidationMessageFor(x => x.LeadingMaleRole)
+
+    <p>Male actor age</p>
+    @Html.TextBoxFor(x => x.LeadingMaleActorAge)
+    @Html.ValidationMessageFor(x => x.LeadingMaleActorAge)
+
+    <p>Year</p>
+    @Html.TextBoxFor(x => x.Year)
+    @Html.ValidationMessageFor(x => x.Year)
+
+    <input type="submit" class="form-control btn btn-primary" value="Ajax Submit" />
+    
+}
+    
+
+@*@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Movie</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Year, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Year, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Year, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Director, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Director, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Director, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.LeadingMaleRole, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.LeadingMaleRole, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LeadingMaleRole, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.LeadingMaleActorAge, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.LeadingMaleActorAge, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LeadingMaleActorAge, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.LeadingFemaleRole, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.LeadingFemaleRole, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LeadingFemaleRole, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.LeadingFemaleActorAge, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.LeadingFemaleActorAge, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LeadingFemaleActorAge, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}*@
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

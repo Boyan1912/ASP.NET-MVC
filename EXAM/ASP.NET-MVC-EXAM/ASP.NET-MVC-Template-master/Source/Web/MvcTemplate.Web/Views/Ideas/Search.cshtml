@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model IEnumerable<MvcTemplate.Web.ViewModels.Home.IdeaViewModel>
+
+<h2>Search</h2>
+
+@foreach (var idea in Model)
+            {
+    
+                <div class="row">
+                    <div class="col-md-2 pull-left container text-center">
+                        <strong>@idea.VotesCount</strong>
+                        <br />
+                        <small class="text-info">votes</small>
+                        <br />
+                        <input id="vote-btn" type="button" value="Vote" />
+                    </div>
+                    <div class="col-md-10">
+                        @Html.Raw(idea.Description.Replace("\n", "<br />"))
+                        <br />
+                        <span class="text-info">
+                            <small>
+                                @idea.CommentsCount <span>comments</span>
+                            </small>
+                        </span>
+                    </div>
+                </div>
+}

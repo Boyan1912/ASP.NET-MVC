@@ -1,0 +1,30 @@
+﻿@model IEnumerable<TwitterLikeApp.Models.Twit>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Tags</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Text)
+        </th>
+        <th>
+           <i>Author </i><small>@Html.DisplayNameFor(model => model.Author.UserName)</small>
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Text)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Author.UserName)
+        </td>
+    </tr>
+}
+
+</table>
